@@ -282,7 +282,6 @@ Frontend Developer | Next.js Specialist
 - [OpenWeatherMap](https://openweathermap.org/) for weather data
 - [Tailwind CSS](https://tailwindcss.com/) for utility-first styling
 - [Leaflet](https://leafletjs.com/) for interactive mapping
-- [Swiper](https://swiperjs.com/) for carousel functionality
 
 ---
 
