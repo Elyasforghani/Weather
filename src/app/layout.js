@@ -81,6 +81,7 @@ export default function RootLayout({ children }) {
                     d="M13 10V3L4 14h7v7l9-11h-7z"
                   />
                 </svg>
+                🐍
                 <span className="absolute -bottom-1 w-1 h-1 rounded-full bg-purple-400 opacity-0 group-focus:opacity-100 transition-opacity" />
               </Link>
 

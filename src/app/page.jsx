@@ -79,6 +79,8 @@ export default function Page() {
         const data = await res.json()
         setSuggestions(data)
         setShowSuggestions(true)
+        console.log(data);
+        
       } catch (error) {
         console.error("Failed to fetch suggestions", error)
       }
@@ -109,14 +111,32 @@ export default function Page() {
   const handleSearch = () => { if (inputValue.trim()) setCity(inputValue.trim()) }
   const handleKeyDown = (e) => { if (e.key === 'Enter') handleSearch() }
 
-  const getWeatherGradient = (condition) => {
-    const text = condition?.toLowerCase() || '';
-    if (text.includes('rain') || text.includes('drizzle')) return 'from-slate-950 via-blue-950 to-slate-900';
-    if (text.includes('snow') || text.includes('ice')) return 'from-slate-950 via-indigo-950 to-slate-900';
-    if (text.includes('cloud') || text.includes('overcast')) return 'from-slate-900 via-slate-800 to-slate-900';
-    if (text.includes('clear') || text.includes('sun')) return 'from-slate-950 via-slate-900 to-amber-950/20';
-    return 'from-slate-950 via-slate-900 to-indigo-950';
-  };
+ const getWeatherGradient = (condition) => {
+  const text = condition?.toLowerCase() || '';
+
+  // Rainy / Stormy: Cool slate blending into deep moody blues
+  if (text.includes('rain') || text.includes('drizzle') || text.includes('thunder')) {
+    return 'from-slate-950 via-blue-950 to-cyan-950';
+  }
+
+  // Snow / Ice: Crisp, arctic indigo-to-slate with icy cyan highlights
+  if (text.includes('snow') || text.includes('ice') || text.includes('flurry')) {
+    return 'from-slate-950 via-indigo-950 to-blue-950';
+  }
+
+  // Cloud / Fog / Overcast: Soft silver-grey tones with subtle indigo contrast
+  if (text.includes('cloud') || text.includes('overcast') || text.includes('fog')) {
+    return 'from-slate-950 via-slate-900 to-zinc-800';
+  }
+
+  // Sunny / Clear: Warm golden-amber accent transitioning from deep dusk sky
+  if (text.includes('clear') || text.includes('sun')) {
+    return 'from-sky-950 via-slate-950 to-amber-900/40';
+  }
+
+  // Fallback: Default balanced dark sky
+  return 'from-slate-950 via-slate-900 to-slate-950';
+};
 
   const getWeatherIcon = (conditionText, sizeClass = "w-24 h-24 md:w-28 md:h-28") => {
     const text = conditionText?.toLowerCase() || '';
