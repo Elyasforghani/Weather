@@ -9,9 +9,12 @@ A sleek, modern weather application built with **Next.js** and **React **. Featu
 ---
 ## 📸 Screenshots
 <img width="1584" height="900" alt="Image" src="https://github.com/user-attachments/assets/80555cff-db20-4193-a358-52b51f455144" />
-<img width="1892" height="905" alt="Image" src="https://github.com/user-attachments/assets/343847f6-b141-4077-937c-c0dc02b97fe2" />
+
+----- even a Game
 
 <img width="1889" height="903" alt="Image" src="https://github.com/user-attachments/assets/5023bb52-e518-4ee9-85b9-ddcbeded5ba9" />
+
+-------
 
 <img width="1580" height="749" alt="Image" src="https://github.com/user-attachments/assets/6c3b315e-e1cf-4be8-91df-a4ee591c9a7a" />
 
